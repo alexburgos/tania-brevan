@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
@@ -19,6 +23,17 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -92,15 +107,24 @@ body {
   }
 }
 
-.nav-brand {
-  font-family: 'Young Serif', serif;
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #1e3a8a;
-  text-decoration: none;
+.nav-brand-name {
+  display: flex;
+  flex-direction: column;
   letter-spacing: 1px;
-  margin-right: 2rem;
   transition: color 0.3s;
+
+  h1 {
+    font-family: 'Young Serif', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    line-height: 2rem;
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: #64748b;
+  }
 
   &:hover {
     color: #d4af37;
@@ -129,7 +153,7 @@ body {
       rgba(30, 41, 59, 0.8) 50%,
       rgba(30, 58, 138, 0.7) 100%
     ),
-    url('assets/meditation.png');
+    url('assets/meditation-logo.webp');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -201,22 +225,22 @@ body {
 }
 
 .btn-primary {
-  background: #d4af37;
+  background: #e5c2d8;
   color: #0f172a;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 25px #6d5ba8;
   }
 }
 
 .btn-secondary {
   background: transparent;
   color: white;
-  border: 2px solid #d4af37;
+  border: 2px solid #e5c2d8;
 
   &:hover {
-    background: #d4af37;
+    background: #e5c2d8;
     color: #0f172a;
     transform: translateY(-2px);
   }
@@ -383,7 +407,7 @@ body {
     color: #475569;
 
     i {
-      color: #1e3a8a;
+      color: #2f3277;
       width: 16px;
     }
   }
@@ -409,9 +433,10 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   color: white;
-  background: linear-gradient(135deg, #1e3a8a, #1e40af);
+  background: #2f3277;
 
   &:hover {
+    background: #6d5ba8;
     transform: translateY(-2px);
   }
 }
@@ -445,8 +470,8 @@ body {
   border-radius: 50px;
   font-size: 1.1rem;
   font-weight: 600;
-  background: #d4af37;
-  color: #0f172a;
+  background: #1e3a8a;
+  color: #fff;
   border: none;
   text-decoration: none;
   display: inline-block;
@@ -454,7 +479,7 @@ body {
   box-shadow: 0 4px 16px rgba(212, 175, 55, 0.08);
 
   &:hover {
-    background: #1e3a8a;
+    background: #6d5ba8;
     color: #fff;
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 10px 25px rgba(30, 58, 138, 0.12);
@@ -476,7 +501,7 @@ body {
     }
 
     i {
-      color: #d4af37;
+      color: #aab4ff;
       width: 42px;
     }
   }
@@ -484,8 +509,8 @@ body {
 
 .footer {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #f8fafc;
-  padding: 20px;
+  color: #aab4ff;
+  padding: 40px 20px;
   box-shadow: 0 -4px 32px rgba(16, 30, 54, 0.08);
 }
 
@@ -512,7 +537,7 @@ body {
   }
 
   p {
-    color: #cbd5e1;
+    color: #fff;
     margin-bottom: 0.75rem;
     line-height: 1.7;
     font-size: 1.05rem;
@@ -523,11 +548,11 @@ body {
   border-top: 1px solid #232e47;
   padding-top: 2rem;
   text-align: right;
-  color: #b6c2d6;
+  color: #fff;
   font-size: 1rem;
 
   a {
-    color: #ffe9b0;
+    color: #aab4ff;
     text-decoration: underline;
     transition: color 0.3s;
 
@@ -539,6 +564,18 @@ body {
 
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.nav-link.active {
+  color: #1e3a8a !important;
+
+  &::after {
+    width: 100% !important;
+  }
 }
 
 .link-calendly {
