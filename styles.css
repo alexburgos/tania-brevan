@@ -152,6 +152,7 @@ body {
 }
 
 .hero-content {
+  margin-top: 10rem;
   text-align: center;
   color: white;
   max-width: 800px;
