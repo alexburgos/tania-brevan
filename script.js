@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('.btn-primary').addEventListener('click', (e) => {
   e.preventDefault();
   e.stopPropagation();
-  window.open('https://calendly.com/taniabrevan/sesion-exploratoria', '_blank');
+  window.open('https://calendly.com/taniabrevan/sesion-exploratoria-clon', '_blank');
 });
 
 document.querySelectorAll('.service-button').forEach((button, index) => {
